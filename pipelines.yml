@@ -6,7 +6,7 @@ resources:
       key2: value2
 
 pipelines:
-  - name: node_test
+  - name: node_test_run
     steps:
       - name: myStep112
         type: Bash
