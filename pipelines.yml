@@ -75,13 +75,13 @@ pipelines:
             - printenv
             - docker images
             
-      - name: win_2019
-        type: PowerShell
-        configuration:
-          nodePool: win_2019
-          inputResources:
-            - name: connecting_resource_node_test_1
-        execution:
-          onExecute:
-            - write-output "Hi"
-            - docker images
+#       - name: win_2019
+#         type: PowerShell
+#         configuration:
+#           nodePool: win_2019
+#           inputResources:
+#             - name: connecting_resource_node_test_1
+#         execution:
+#           onExecute:
+#             - write-output "Hi"
+#             - docker images
