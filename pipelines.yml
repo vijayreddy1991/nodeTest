@@ -64,16 +64,16 @@ pipelines:
             - printenv
             - docker images
             
-      - name: c8dynamic
-        type: Bash
-        configuration:
-          nodePool: c8dynamic
-          inputResources:
-            - name: connecting_resource_node_test_1
-        execution:
-          onExecute:
-            - printenv
-            - docker images
+#       - name: c8dynamic
+#         type: Bash
+#         configuration:
+#           nodePool: c8dynamic
+#           inputResources:
+#             - name: connecting_resource_node_test_1
+#         execution:
+#           onExecute:
+#             - printenv
+#             - docker images
             
       - name: win_2019_1
         type: PowerShell
