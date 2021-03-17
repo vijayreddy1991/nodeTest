@@ -78,7 +78,7 @@ pipelines:
       - name: win_2019_1
         type: PowerShell
         configuration:
-          nodePool: win_2019
+          nodePool: win_2019_1
           inputResources:
             - name: connecting_resource_node_test_1
         execution:
