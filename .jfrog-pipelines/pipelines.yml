@@ -11,7 +11,7 @@ pipelines:
       - name: myStep112
         type: Bash
         configuration:
-          outputResources: 
+          outputResources:
             - name: connecting_resource_node_test_1
 #               trigger: false
           integrations:
@@ -20,16 +20,16 @@ pipelines:
           onExecute:
             - write_output connecting_resource_node_test_1 "test=value"
 
-      - name: u16dynamic
-        type: Bash
-        configuration:
-          nodePool: u16dynamic
-          inputResources:
-            - name: connecting_resource_node_test_1
-        execution:
-          onExecute:
-            - printenv
-            - docker images
+      # - name: u16dynamic
+      #   type: Bash
+      #   configuration:
+      #     nodePool: u16dynamic
+      #     inputResources:
+      #       - name: connecting_resource_node_test_1
+      #   execution:
+      #     onExecute:
+      #       - printenv
+      #       - docker images
 
       - name: c7dynamic
         type: Bash
@@ -52,7 +52,7 @@ pipelines:
           onExecute:
             - printenv
             - docker images
-            
+
       - name: u20dynamic
         type: Bash
         configuration:
@@ -63,18 +63,18 @@ pipelines:
           onExecute:
             - printenv
             - docker images
-            
-      - name: c8dynamic
-        type: Bash
-        configuration:
-          nodePool: c8dynamic
-          inputResources:
-            - name: connecting_resource_node_test_1
-        execution:
-          onExecute:
-            - printenv
-            - docker images
-            
+
+      # - name: c8dynamic
+      #   type: Bash
+      #   configuration:
+      #     nodePool: c8dynamic
+      #     inputResources:
+      #       - name: connecting_resource_node_test_1
+      #   execution:
+      #     onExecute:
+      #       - printenv
+      #       - docker images
+
       - name: win_2019
         type: PowerShell
         configuration:
