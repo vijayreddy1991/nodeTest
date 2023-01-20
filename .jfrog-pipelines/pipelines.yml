@@ -9,7 +9,9 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay
-      path: vijayreddy1991/nodeTest     
+      path: vijayreddy1991/nodeTest
+      branches:
+        include: runtime      
 
 pipelines:
   - name: node_test_run
