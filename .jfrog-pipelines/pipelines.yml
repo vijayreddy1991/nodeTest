@@ -49,7 +49,9 @@ pipelines:
             - pushd $res_test_1234_resourcePath
             - cd docker
             - docker buildx version
-            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7 .
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7-amd64 .
+            - docker buildx build  --platform linux/arm64 -t vijaydocker1991/centos7-arm64 .
+            - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/centos7-arm32 .
             - docker images
 
       - name: u18dynamic
@@ -73,7 +75,9 @@ pipelines:
             - pushd $res_test_1234_resourcePath  
             - cd docker
             - docker buildx
-            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu18t .
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu18-amd64 .
+            - docker buildx build  --platform linux/arm64 -t vijaydocker1991/ubuntu18-arm64 .
+            - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/ubuntu18-arm32 .            
             - docker images            
 
       - name: u20dynamic
@@ -97,7 +101,9 @@ pipelines:
             - pushd $res_test_1234_resourcePath
             - cd docker
             - docker buildx
-            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu20 .
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu20-amd64 .
+            - docker buildx build  --platform linux/arm64 -t vijaydocker1991/ubuntu20-arm64 .
+            - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/ubuntu20-arm32 . 
             - docker images            
 
 #       - name: win_2019
