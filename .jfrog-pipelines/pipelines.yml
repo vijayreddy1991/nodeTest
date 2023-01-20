@@ -4,11 +4,17 @@ resources:
     configuration:
       key1: value1
       key2: value2
+      
+  - name: test_1234
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/nodeTest     
 
 pipelines:
   - name: node_test_run
     steps:
-      - name: myStep112
+      - name: myStep
         type: Bash
         configuration:
           outputResources:
@@ -22,7 +28,7 @@ pipelines:
 
       - name: c7dynamic
         type: Bash
-        configuration:
+        configuration:     
           nodePool: c7dynamic
           runtime:      
             type: image
@@ -30,10 +36,9 @@ pipelines:
               custom:
                 name: docker.jfrog.io/jfrog/pipelines-c7
                 tag: 0.0.0-f11020
-                autoPull: false
                 registry: DockerRegistry       
           inputResources:
-            - name: connecting_resource_node_test_1
+            - name: test_1234
         execution:
           onExecute:
             - docker images
@@ -49,10 +54,9 @@ pipelines:
               custom:
                 name: docker.jfrog.io/jfrog/pipelines-c7
                 tag: 0.0.0-f11020
-                autoPull: false
                 registry: DockerRegistry              
           inputResources:
-            - name: connecting_resource_node_test_1
+            - name: test_1234
         execution:
           onExecute:
             - docker images
@@ -67,26 +71,14 @@ pipelines:
               custom:
                 name: docker.jfrog.io/jfrog/pipelines-c7
                 tag: 0.0.0-f11020
-                autoPull: false
                 registry: DockerRegistry           
           nodePool: u20dynamic
           inputResources:
-            - name: connecting_resource_node_test_1
+            - name: test_1234
         execution:
           onExecute:
             - docker images
             - docker buildx
-
-      # - name: c8dynamic
-      #   type: Bash
-      #   configuration:
-      #     nodePool: c8dynamic
-      #     inputResources:
-      #       - name: connecting_resource_node_test_1
-      #   execution:
-      #     onExecute:
-      #       - printenv
-      #       - docker images
 
 #       - name: win_2019
 #         type: PowerShell
