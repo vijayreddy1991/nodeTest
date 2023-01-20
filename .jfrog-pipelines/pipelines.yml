@@ -46,6 +46,8 @@ pipelines:
           onExecute:
             - pushd $res_test_1234_resourcePath
             - ls -la
+            - cd ..
+            - ls -la
             - docker images
             - docker buildx
             - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7 --push .
@@ -70,6 +72,8 @@ pipelines:
           onExecute:
             - pushd $res_test_1234_resourcePath  
             - ls -la
+            - cd ..
+            - ls -la
             - docker images
             - docker buildx
             - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu18t --push .
@@ -93,6 +97,8 @@ pipelines:
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath
+            - ls -la
+            - cd ..
             - ls -la
             - docker images
             - docker buildx
