@@ -20,49 +20,62 @@ pipelines:
           onExecute:
             - write_output connecting_resource_node_test_1 "test=value"
 
-      # - name: u16dynamic
-      #   type: Bash
-      #   configuration:
-      #     nodePool: u16dynamic
-      #     inputResources:
-      #       - name: connecting_resource_node_test_1
-      #   execution:
-      #     onExecute:
-      #       - printenv
-      #       - docker images
-
       - name: c7dynamic
         type: Bash
         configuration:
           nodePool: c7dynamic
+          runtime:      
+            type: image
+            image:
+              custom:
+                name: docker.jfrog.io/jfrog/pipelines-c7
+                tag: 0.0.0-f11020
+                autoPull: false
+                registry: DockerRegistry       
           inputResources:
             - name: connecting_resource_node_test_1
         execution:
           onExecute:
-            - printenv
             - docker images
+            - docker buildx
 
       - name: u18dynamic
         type: Bash
         configuration:
           nodePool: u18dynamic
+          runtime:      
+            type: image
+            image:
+              custom:
+                name: docker.jfrog.io/jfrog/pipelines-c7
+                tag: 0.0.0-f11020
+                autoPull: false
+                registry: DockerRegistry              
           inputResources:
             - name: connecting_resource_node_test_1
         execution:
           onExecute:
-            - printenv
             - docker images
+            - docker buildx
 
       - name: u20dynamic
         type: Bash
         configuration:
+          runtime:      
+            type: image
+            image:
+              custom:
+                name: docker.jfrog.io/jfrog/pipelines-c7
+                tag: 0.0.0-f11020
+                autoPull: false
+                registry: DockerRegistry           
           nodePool: u20dynamic
           inputResources:
             - name: connecting_resource_node_test_1
         execution:
           onExecute:
-            - printenv
             - docker images
+            - docker buildx
 
       # - name: c8dynamic
       #   type: Bash
