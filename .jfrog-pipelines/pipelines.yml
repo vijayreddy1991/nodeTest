@@ -29,19 +29,19 @@ pipelines:
       - name: c7dynamic
         type: Bash
         configuration:     
-          nodePool: c7dynamic
+          nodePool: pipelines_c7
           runtime:      
             type: image
             image:
               custom:
                 name: docker.jfrog.io/jfrog/pipelines-c7
                 tag: 0.0.0-f11020
-                registry: DockerRegistry       
+                registry: dockerDotJfrog       
           inputResources:
             - name: test_1234
             - name: connecting_resource_node_test_1
           integrations:
-            - name: docker
+            - name: vijay_docker
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath
@@ -52,19 +52,19 @@ pipelines:
       - name: u18dynamic
         type: Bash
         configuration:
-          nodePool: u18dynamic
+          nodePool: pipelines_u18
           runtime:      
             type: image
             image:
               custom:
                 name: docker.jfrog.io/jfrog/pipelines-c7
                 tag: 0.0.0-f11020
-                registry: DockerRegistry              
+                registry: dockerDotJfrog              
           inputResources:
             - name: test_1234
             - name: connecting_resource_node_test_1
           integrations:
-            - name: docker            
+            - name: vijay_docker            
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath          
@@ -81,13 +81,13 @@ pipelines:
               custom:
                 name: docker.jfrog.io/jfrog/pipelines-c7
                 tag: 0.0.0-f11020
-                registry: DockerRegistry           
-          nodePool: u20dynamic
+                registry: dockerDotJfrog           
+          nodePool: pipelines_u20
           inputResources:
             - name: test_1234
             - name: connecting_resource_node_test_1
           integrations:
-            - name: docker            
+            - name: vijay_docker            
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath          
