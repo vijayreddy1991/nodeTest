@@ -47,12 +47,10 @@ pipelines:
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath
-            - ls -la
             - cd docker
-            - ls -la
+            - docker buildx version
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7 .
             - docker images
-            - docker buildx
-            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7 --push .
 
       - name: u18dynamic
         type: Bash
@@ -73,12 +71,10 @@ pipelines:
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath  
-            - ls -la
             - cd docker
-            - ls -la
-            - docker images
             - docker buildx
-            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu18t --push .
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu18t .
+            - docker images            
 
       - name: u20dynamic
         type: Bash
@@ -99,12 +95,10 @@ pipelines:
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath
-            - ls -la
             - cd docker
-            - ls -la
-            - docker images
             - docker buildx
-            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu20 --push .
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu20 .
+            - docker images            
 
 #       - name: win_2019
 #         type: PowerShell
