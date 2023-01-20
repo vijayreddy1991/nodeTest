@@ -46,7 +46,7 @@ pipelines:
           onExecute:
             - pushd $res_test_1234_resourcePath
             - ls -la
-            - cd ..
+            - cd docker
             - ls -la
             - docker images
             - docker buildx
@@ -72,7 +72,7 @@ pipelines:
           onExecute:
             - pushd $res_test_1234_resourcePath  
             - ls -la
-            - cd ..
+            - cd docker
             - ls -la
             - docker images
             - docker buildx
@@ -98,7 +98,7 @@ pipelines:
           onExecute:
             - pushd $res_test_1234_resourcePath
             - ls -la
-            - cd ..
+            - cd docker
             - ls -la
             - docker images
             - docker buildx
