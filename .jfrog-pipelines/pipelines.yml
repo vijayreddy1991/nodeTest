@@ -39,10 +39,14 @@ pipelines:
                 registry: DockerRegistry       
           inputResources:
             - name: test_1234
+          integrations:
+            - name: docker
         execution:
           onExecute:
+            - pushd $res_test_1234_resourcePath
             - docker images
             - docker buildx
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7 --push .
 
       - name: u18dynamic
         type: Bash
@@ -57,10 +61,14 @@ pipelines:
                 registry: DockerRegistry              
           inputResources:
             - name: test_1234
+          integrations:
+            - name: docker            
         execution:
           onExecute:
+            - pushd $res_test_1234_resourcePath          
             - docker images
             - docker buildx
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu18t --push .
 
       - name: u20dynamic
         type: Bash
@@ -75,10 +83,14 @@ pipelines:
           nodePool: u20dynamic
           inputResources:
             - name: test_1234
+          integrations:
+            - name: docker            
         execution:
           onExecute:
+            - pushd $res_test_1234_resourcePath          
             - docker images
             - docker buildx
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu20 --push .
 
 #       - name: win_2019
 #         type: PowerShell
