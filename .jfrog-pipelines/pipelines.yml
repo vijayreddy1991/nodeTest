@@ -32,13 +32,13 @@ pipelines:
         type: Bash
         configuration:     
           nodePool: pipelines_c7
-          runtime:      
-            type: image
-            image:
-              custom:
-                name: docker.jfrog.io/jfrog/pipelines-c7
-                tag: 0.0.0-f11020
-                registry: dockerDotJfrog       
+#           runtime:      
+#             type: image
+#             image:
+#               custom:
+#                 name: docker.jfrog.io/jfrog/pipelines-c7
+#                 tag: 0.0.0-f11020
+#                 registry: dockerDotJfrog       
           inputResources:
             - name: test_1234
             - name: connecting_resource_node_test_1
@@ -58,13 +58,13 @@ pipelines:
         type: Bash
         configuration:
           nodePool: pipelines_u18
-          runtime:      
-            type: image
-            image:
-              custom:
-                name: docker.jfrog.io/jfrog/pipelines-c7
-                tag: 0.0.0-f11020
-                registry: dockerDotJfrog              
+#           runtime:      
+#             type: image
+#             image:
+#               custom:
+#                 name: docker.jfrog.io/jfrog/pipelines-c7
+#                 tag: 0.0.0-f11020
+#                 registry: dockerDotJfrog              
           inputResources:
             - name: test_1234
             - name: connecting_resource_node_test_1
@@ -83,13 +83,13 @@ pipelines:
       - name: u20dynamic
         type: Bash
         configuration:
-          runtime:      
-            type: image
-            image:
-              custom:
-                name: docker.jfrog.io/jfrog/pipelines-c7
-                tag: 0.0.0-f11020
-                registry: dockerDotJfrog           
+#           runtime:      
+#             type: image
+#             image:
+#               custom:
+#                 name: docker.jfrog.io/jfrog/pipelines-c7
+#                 tag: 0.0.0-f11020
+#                 registry: dockerDotJfrog           
           nodePool: pipelines_u20
           inputResources:
             - name: test_1234
