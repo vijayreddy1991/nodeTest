@@ -31,7 +31,7 @@ pipelines:
       - name: c7dynamic
         type: Bash
         configuration:     
-          nodePool: pipelines_c7
+          nodePool: c7dynamic
 #           runtime:      
 #             type: image
 #             image:
@@ -57,7 +57,7 @@ pipelines:
       - name: u18dynamic
         type: Bash
         configuration:
-          nodePool: pipelines_u18
+          nodePool: u18dynamic
 #           runtime:      
 #             type: image
 #             image:
@@ -90,7 +90,7 @@ pipelines:
 #                 name: docker.jfrog.io/jfrog/pipelines-c7
 #                 tag: 0.0.0-f11020
 #                 registry: dockerDotJfrog           
-          nodePool: pipelines_u20
+          nodePool: u20dynamic
           inputResources:
             - name: test_1234
             - name: connecting_resource_node_test_1
