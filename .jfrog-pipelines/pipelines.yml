@@ -31,8 +31,8 @@ pipelines:
 
       - name: c7dynamic
         type: Bash
-        configuration:     
-          nodePool: k9s
+#         configuration:     
+#           nodePool: k9s
 #           runtime:      
 #             type: image
 #             image:
@@ -47,11 +47,11 @@ pipelines:
           onExecute:
             - pushd $res_test_1234_resourcePath
 #             - cd docker
-#             - docker buildx version
-#             - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7-amd64 .
-#             - docker buildx build  --platform linux/arm64 -t vijaydocker1991/centos7-arm64 .
-#             - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/centos7-arm32 .
-#             - docker images
+            - docker buildx version
+            - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7-amd64 .
+            - docker buildx build  --platform linux/arm64 -t vijaydocker1991/centos7-arm64 .
+            - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/centos7-arm32 .
+            - docker images
 
 #       - name: u18dynamic
 #         type: Bash
