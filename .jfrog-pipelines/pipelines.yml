@@ -19,7 +19,7 @@ pipelines:
       - name: myStep
         type: Bash
         configuration:
-          nodePool: k9s        
+#           nodePool: k9s        
           outputResources:
             - name: connecting_resource_node_test_1
 #               trigger: false
