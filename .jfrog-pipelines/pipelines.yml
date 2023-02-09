@@ -46,7 +46,7 @@ pipelines:
         execution:
           onExecute:
             - pushd $res_test_1234_resourcePath
-#             - cd docker
+            - cd docker
             - docker buildx version
             - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7-amd64 .
             - docker buildx build  --platform linux/arm64 -t vijaydocker1991/centos7-arm64 .
