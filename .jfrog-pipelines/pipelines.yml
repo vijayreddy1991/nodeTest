@@ -31,7 +31,7 @@ pipelines:
 
       - name: c7dynamic
         type: Bash
-#         configuration:     
+        configuration:     
 #           nodePool: k9s
 #           runtime:      
 #             type: image
