@@ -32,13 +32,12 @@ pipelines:
       - name: c7dynamic
         type: Bash
         configuration:     
-#           nodePool: k9s
           runtime:      
             type: image
             image:
               custom:
-                name: docker.jfrog.io/jfrog/pipelines-u18node
-                tag: 16.17.1-f11518
+                name: jfpip.jfrog.io/jfrog/pipelines-c7
+                tag: 0.0.0-f12594
                 registry: vijay_docker     
           inputResources:
             - name: test_1234
@@ -47,63 +46,53 @@ pipelines:
           onExecute:
             - pushd $res_test_1234_resourcePath
 #             - cd docker
-#             - docker buildx version
-#             - docker buildx build  --platform linux/amd64 -t vijaydocker1991/centos7-amd64 .
-#             - docker buildx build  --platform linux/arm64 -t vijaydocker1991/centos7-arm64 .
-#             - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/centos7-arm32 .
+            - docker buildx version
             - docker images
 
-#       - name: u18dynamic
-#         type: Bash
-#         configuration:
-#           nodePool: u18dynamic
-# #           runtime:      
-# #             type: image
-# #             image:
-# #               custom:
-# #                 name: docker.jfrog.io/jfrog/pipelines-c7
-# #                 tag: 0.0.0-f11020
-# #                 registry: dockerDotJfrog              
-#           inputResources:
-#             - name: test_1234
-#             - name: connecting_resource_node_test_1
-#           integrations:
-#             - name: vijay_docker            
-#         execution:
-#           onExecute:
-#             - pushd $res_test_1234_resourcePath  
-#             - cd docker
-#             - docker buildx
-#             - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu18-amd64 .
-#             - docker buildx build  --platform linux/arm64 -t vijaydocker1991/ubuntu18-arm64 .
-#             - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/ubuntu18-arm32 .            
-#             - docker images            
+      - name: u18dynamic
+        type: Bash
+        configuration:
+          runtime:      
+            type: image
+            image:
+              custom:
+                name: jfpip.jfrog.io/jfrog/pipelines-u18
+                tag: 0.0.0-f12594
+                registry: vijay_docker              
+          inputResources:
+            - name: test_1234
+            - name: connecting_resource_node_test_1
+          integrations:
+            - name: vijay_docker            
+        execution:
+          onExecute:
+            - pushd $res_test_1234_resourcePath  
+            - cd docker
+            - docker buildx version           
+            - docker images            
 
-#       - name: u20dynamic
-#         type: Bash
-#         configuration:
-#           runtime:      
-#             type: image
-#             image:
-#               custom:
-#                 name: docker.jfrog.io/jfrog/pipelines-c7
-#                 tag: 0.0.0-f11020
-#                 registry: dockerDotJfrog           
-#           nodePool: u20dynamic
-#           inputResources:
-#             - name: test_1234
-#             - name: connecting_resource_node_test_1
-#           integrations:
-#             - name: vijay_docker            
-#         execution:
-#           onExecute:
-#             - pushd $res_test_1234_resourcePath
-#             - cd docker
-#             - docker buildx
-#             - docker buildx build  --platform linux/amd64 -t vijaydocker1991/ubuntu20-amd64 .
-#             - docker buildx build  --platform linux/arm64 -t vijaydocker1991/ubuntu20-arm64 .
-#             - docker buildx build  --platform linux/arm/v7 -t vijaydocker1991/ubuntu20-arm32 . 
-#             - docker images            
+      - name: u20dynamic
+        type: Bash
+        configuration:
+          runtime:      
+            type: image
+            image:
+              custom:
+                name: jfpip.jfrog.io/jfrog/pipelines-u20
+                tag: 0.0.0-f12594
+                registry: vijay_docker           
+          nodePool: u20dynamic
+          inputResources:
+            - name: test_1234
+            - name: connecting_resource_node_test_1
+          integrations:
+            - name: vijay_docker            
+        execution:
+          onExecute:
+            - pushd $res_test_1234_resourcePath
+            - cd docker
+            - docker buildx version 
+            - docker images            
 
 #       - name: win_2019
 #         type: PowerShell
