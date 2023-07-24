@@ -92,11 +92,7 @@ pipelines:
           runtime:
             type: host        
           nodePool: win_2019
-          inputResources:
-            - name: connecting_resource_node_test_1
         execution:
           onExecute:
-            - write-output "Hi"
-            - docker images
-            - node --version
+            - node -v
             - (Get-Command node).Path
