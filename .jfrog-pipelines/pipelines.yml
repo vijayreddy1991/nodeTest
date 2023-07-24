@@ -91,7 +91,7 @@ pipelines:
         configuration:
           runtime:
             type: host        
-          nodePool: win_2019
+          nodePool: win_20191
           inputResources:
             - name: connecting_resource_node_test_1
         execution:
