@@ -11,6 +11,8 @@ pipelines:
       - name: myStep112
         type: Bash
         configuration:
+          runtime:
+            type: host
           outputResources:
             - name: connecting_resource_node_test_1
 #               trigger: false
@@ -34,6 +36,8 @@ pipelines:
       - name: c7dynamic
         type: Bash
         configuration:
+          runtime:
+            type: host        
           nodePool: c7dynamic
           inputResources:
             - name: connecting_resource_node_test_1
@@ -46,6 +50,8 @@ pipelines:
       - name: u18dynamic
         type: Bash
         configuration:
+          runtime:
+            type: host        
           nodePool: u18dynamic
           inputResources:
             - name: connecting_resource_node_test_1
@@ -58,6 +64,8 @@ pipelines:
       - name: u20dynamic
         type: Bash
         configuration:
+          runtime:
+            type: host        
           nodePool: u20dynamic
           inputResources:
             - name: connecting_resource_node_test_1
@@ -81,6 +89,8 @@ pipelines:
       - name: win_2019
         type: PowerShell
         configuration:
+          runtime:
+            type: host        
           nodePool: win_2019
           inputResources:
             - name: connecting_resource_node_test_1
