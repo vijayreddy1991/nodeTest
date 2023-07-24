@@ -41,6 +41,7 @@ pipelines:
           onExecute:
             - printenv
             - docker images
+            - node --version
 
       - name: u18dynamic
         type: Bash
@@ -52,6 +53,7 @@ pipelines:
           onExecute:
             - printenv
             - docker images
+            - node --version
 
       - name: u20dynamic
         type: Bash
@@ -63,6 +65,7 @@ pipelines:
           onExecute:
             - printenv
             - docker images
+            - node --version
 
       # - name: c8dynamic
       #   type: Bash
@@ -85,3 +88,4 @@ pipelines:
           onExecute:
             - write-output "Hi"
             - docker images
+            - node --version
