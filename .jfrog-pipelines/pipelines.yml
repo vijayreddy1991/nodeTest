@@ -99,3 +99,4 @@ pipelines:
             - write-output "Hi"
             - docker images
             - node --version
+            - which node
