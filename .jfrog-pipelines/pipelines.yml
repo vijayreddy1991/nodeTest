@@ -66,13 +66,10 @@ pipelines:
         configuration:
           runtime:
             type: host        
-          nodePool: u20dynamic
           inputResources:
             - name: connecting_resource_node_test_1
         execution:
           onExecute:
-            - printenv
-            - docker images
             - node --version
 
       # - name: c8dynamic
