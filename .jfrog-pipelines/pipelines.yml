@@ -8,19 +8,19 @@ resources:
 pipelines:
   - name: node_test_run
     steps:
-      - name: myStep112
-        type: Bash
-        configuration:
-          runtime:
-            type: host
-          outputResources:
-            - name: connecting_resource_node_test_1
-#               trigger: false
-          integrations:
-            - name: vijay
-        execution:
-          onExecute:
-            - write_output connecting_resource_node_test_1 "test=value"
+#       - name: myStep112
+#         type: Bash
+#         configuration:
+#           runtime:
+#             type: host
+#           outputResources:
+#             - name: connecting_resource_node_test_1
+# #               trigger: false
+#           integrations:
+#             - name: vijay
+#         execution:
+#           onExecute:
+#             - write_output connecting_resource_node_test_1 "test=value"
 
       # - name: u16dynamic
       #   type: Bash
@@ -33,33 +33,33 @@ pipelines:
       #       - printenv
       #       - docker images
 
-      - name: c7dynamic
-        type: Bash
-        configuration:
-          runtime:
-            type: host        
-          nodePool: c7dynamic
-          inputResources:
-            - name: connecting_resource_node_test_1
-        execution:
-          onExecute:
-            - printenv
-            - docker images
-            - node --version
+      # - name: c7dynamic
+      #   type: Bash
+      #   configuration:
+      #     runtime:
+      #       type: host        
+      #     nodePool: c7dynamic
+      #     inputResources:
+      #       - name: connecting_resource_node_test_1
+      #   execution:
+      #     onExecute:
+      #       - printenv
+      #       - docker images
+      #       - node --version
 
-      - name: u18dynamic
-        type: Bash
-        configuration:
-          runtime:
-            type: host        
-          nodePool: u18dynamic
-          inputResources:
-            - name: connecting_resource_node_test_1
-        execution:
-          onExecute:
-            - printenv
-            - docker images
-            - node --version
+      # - name: u18dynamic
+      #   type: Bash
+      #   configuration:
+      #     runtime:
+      #       type: host        
+      #     nodePool: u18dynamic
+      #     inputResources:
+      #       - name: connecting_resource_node_test_1
+      #   execution:
+      #     onExecute:
+      #       - printenv
+      #       - docker images
+      #       - node --version
 
       - name: u20dynamic
         type: Bash
@@ -86,14 +86,14 @@ pipelines:
       #       - printenv
       #       - docker images
 
-      - name: win_2019
-        type: PowerShell
-        configuration:
-          runtime:
-            type: host        
-          nodePool: win_2019
-          inputResources:
-            - name: connecting_resource_node_test_1          
-        execution:
-          onExecute:
-            - node -v
+      # - name: win_2019
+      #   type: PowerShell
+      #   configuration:
+      #     runtime:
+      #       type: host        
+      #     nodePool: win_2019
+      #     inputResources:
+      #       - name: connecting_resource_node_test_1          
+      #   execution:
+      #     onExecute:
+      #       - node -v
