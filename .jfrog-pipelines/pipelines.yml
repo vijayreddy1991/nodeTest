@@ -47,21 +47,7 @@ pipelines:
       #       - docker images
       #       - node --version
 
-      # - name: u18dynamic
-      #   type: Bash
-      #   configuration:
-      #     runtime:
-      #       type: host        
-      #     nodePool: u18dynamic
-      #     inputResources:
-      #       - name: connecting_resource_node_test_1
-      #   execution:
-      #     onExecute:
-      #       - printenv
-      #       - docker images
-      #       - node --version
-
-      - name: u20dynamic
+      - name: u18dynamic
         type: Bash
         configuration:
           runtime:
@@ -71,6 +57,17 @@ pipelines:
         execution:
           onExecute:
             - node --version
+
+      # - name: u20dynamic
+      #   type: Bash
+      #   configuration:
+      #     runtime:
+      #       type: host        
+      #     inputResources:
+      #       - name: connecting_resource_node_test_1
+      #   execution:
+      #     onExecute:
+      #       - node --version
 
       # - name: c8dynamic
       #   type: Bash
